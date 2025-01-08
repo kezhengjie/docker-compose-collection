@@ -1,0 +1,13 @@
+services:
+  postgres:
+    image: postgres:14
+    pull_policy: always
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_USER=postgres
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - ./postgresql/data:/var/lib/postgresql/data
